@@ -1,6 +1,7 @@
 'use client';
 
-import { useSignIn } from '@clerk/nextjs';
+import { useSignIn, useClerk } from '@clerk/nextjs';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,7 +27,11 @@ type SignInFormValues = z.infer<typeof signInSchema>;
 
 export default function CustomSignInForm() {
   const { signIn, isLoaded } = useSignIn();
+  const clerk = useClerk();
+  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get('redirect_url') || '/';
 
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
@@ -40,11 +45,14 @@ export default function CustomSignInForm() {
     setError(null);
     if (!signIn) return;
     try {
-      await signIn.create({
+      const res = await signIn.create({
         identifier: data.email,
         password: data.password,
       });
-      // Clerk will handle redirect on success
+      if (res.status === 'complete' && res.createdSessionId) {
+        await clerk.setActive({ session: res.createdSessionId });
+        router.replace(redirectUrl);
+      }
     } catch (err: unknown) {
       if (
         typeof err === 'object' &&
@@ -67,9 +75,10 @@ export default function CustomSignInForm() {
     try {
       await signIn.authenticateWithRedirect({
         strategy: 'oauth_google',
-        redirectUrl: '/',
+        redirectUrl,
+        redirectUrlComplete: redirectUrl,
       });
-    } catch (err: unknown) {
+    } catch {
       setError('Google sign-in failed');
     }
   };
