@@ -1,4 +1,4 @@
-import SignOutButton from '@/components/auth/SignOutButton';
+import SignOutButton from '@/components/auth/sign-out-button';
 import React from 'react';
 
 export default function HomePage() {

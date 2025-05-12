@@ -23,7 +23,7 @@ This project is a **Next.js 15 portfolio demo** showcasing a **custom Clerk sign
 - Apply **react-hook-form** and **Zod** for all form-related logic.
 - Implement forms using the latest Shadcn UI form primitives and patterns as shown in [Shadcn UI Form Documentation](https://ui.shadcn.com/docs/components/form), ensuring consistency with Shadcn's recommended structure and accessibility best practices.
 - Style Clerk components with **Tailwind classes** as per [Clerk’s Tailwind customization guide](https://clerk.com/docs/customization/overview#use-tailwind-classes-to-style-clerk-components).
-- Use **camelCase** for variables, **PascalCase** for components, and **kebab-case** or descriptive names for utility files (e.g., `user-data.ts`).
+- Use **camelCase** for variables, and **kebab-case** or descriptive names for components and utility files (e.g., `user-menu.tsx`).
 - Use a fully custom sign-in form using Clerk’s hooks and APIs.
 - Build clean and modern UI that aligns with Shadcn's design system.
 - Use default Shadcn UI components and [React Lucide icons](https://lucide.dev/icons/) for all iconography if it exists in Lucide (e.g., import from `lucide-react`).
