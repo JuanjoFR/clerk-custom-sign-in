@@ -79,7 +79,7 @@ export default function CustomSignInForm() {
     if (!signIn) return;
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const res = await signIn.create({
         identifier: data.email,
