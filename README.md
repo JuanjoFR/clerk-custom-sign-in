@@ -15,6 +15,12 @@ A demo showcasing a fully custom authentication experience with Clerk, built on 
 
 ## 📸 Screenshots & Demo
 
+<img width="821" alt="mobile" src="https://github.com/user-attachments/assets/000c18a7-4625-4b42-9a5f-0ca31655ca18" />
+
+<img width="1440" alt="desktop" src="https://github.com/user-attachments/assets/5f050a79-28ff-4a7b-b155-83dee66f9707" />
+
+[video.webm](https://github.com/user-attachments/assets/debb925e-05fa-4e96-b9fa-418a75abb94f)
+
 ## 🛠️ Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) with App Router
