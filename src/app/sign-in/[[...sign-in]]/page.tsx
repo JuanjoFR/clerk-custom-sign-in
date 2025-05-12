@@ -1,5 +1,5 @@
 import { auth } from '@clerk/nextjs/server';
-import CustomSignInForm from '@/components/auth/custom-sign-in-form';
+import CustomSignInForm from '@/components/custom-sign-in-form';
 import { redirect } from 'next/navigation';
 
 export default async function SignInPage() {
