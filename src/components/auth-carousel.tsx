@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import {
   Carousel,
@@ -8,10 +10,18 @@ import {
 } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { Star, StarHalf } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 export function AuthCarousel() {
   return (
-    <Carousel className="mx-auto w-full">
+    <Carousel
+      className="mx-auto w-full"
+      plugins={[
+        Autoplay({
+          delay: 6000,
+        }),
+      ]}
+    >
       <CarouselContent>
         {/* Testimonial 1 */}
         <CarouselItem key="1">
