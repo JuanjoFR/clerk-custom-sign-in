@@ -13,6 +13,16 @@ A modern Next.js 15 custom authentication experience using Clerk, built with bes
 - **Type Safety**: Strict TypeScript configuration
 - **Form Handling**: React Hook Form with Zod validation
 
+## 📸 Screenshots & Demo
+
+<!-- Add screenshots of the authentication UI and protected pages below -->
+<!-- Example: -->
+<!-- ![Sign-in page screenshot](./screenshots/sign-in.png) -->
+
+<!-- Add a demo video/gif below -->
+<!-- Example: -->
+<!-- [![Demo Video](https://img.youtube.com/vi/your-video-id/0.jpg)](https://www.youtube.com/watch?v=your-video-id) -->
+
 ## 🛠️ Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) with App Router
@@ -45,6 +55,9 @@ Create a `.env.local` file in the root directory:
 ```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
 CLERK_SECRET_KEY=your_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/welcome
 ```
 
 4. **Start the development server**
@@ -61,8 +74,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 src/
 ├── app/             # Next.js app router pages
 ├── components/      # Reusable components
-├── lib/            # Utilities and helpers
-└── schemas/        # Zod validation schemas
+├── lib/             # Utilities and helpers
 ```
 
 ## 🎨 Code Style
