@@ -1,6 +1,6 @@
 # Custom Clerk Authentication Portfolio Demo
 
-A modern Next.js 15 custom authentication experience using Clerk, built with best practices and a beautiful UI.
+A demo showcasing a fully custom authentication experience with Clerk, built on Next.js 15 demonstrating advanced authentication UX/UI skills. This project features a modern, responsive interface using Tailwind CSS and Shadcn UI components, strict TypeScript, and robust form handling with React Hook Form and Zod. The Clerk sign-in authentication flow is fully customized with Tailwind classes for a seamless, branded user experience. Ideal as a reference project requiring secure, beautiful, and accessible authentication.
 
 > **Note:** All logo and testimonial images in this project were generated using [leonardo.ai](https://leonardo.ai/).
 
@@ -14,12 +14,6 @@ A modern Next.js 15 custom authentication experience using Clerk, built with bes
 - **Form Handling**: React Hook Form with Zod validation
 
 ## 📸 Screenshots & Demo
-
-<img width="821" alt="mobile" src="https://github.com/user-attachments/assets/c1920ab0-57db-481c-a5a1-ee9eba80b6b5" />
-
-<img width="1440" alt="desktop" src="https://github.com/user-attachments/assets/512ac1e5-7f6c-4165-b81c-b12440a11c86" />
-
-[video.webm](https://github.com/user-attachments/assets/75d7cb33-4aff-4d64-a1f9-6c2c7060afc6)
 
 ## 🛠️ Tech Stack
 
