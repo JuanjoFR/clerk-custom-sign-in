@@ -15,13 +15,11 @@ A modern Next.js 15 custom authentication experience using Clerk, built with bes
 
 ## 📸 Screenshots & Demo
 
-<!-- Add screenshots of the authentication UI and protected pages below -->
-<!-- Example: -->
-<!-- ![Sign-in page screenshot](./screenshots/sign-in.png) -->
+<img width="821" alt="mobile" src="https://github.com/user-attachments/assets/c1920ab0-57db-481c-a5a1-ee9eba80b6b5" />
 
-<!-- Add a demo video/gif below -->
-<!-- Example: -->
-<!-- [![Demo Video](https://img.youtube.com/vi/your-video-id/0.jpg)](https://www.youtube.com/watch?v=your-video-id) -->
+<img width="1440" alt="desktop" src="https://github.com/user-attachments/assets/512ac1e5-7f6c-4165-b81c-b12440a11c86" />
+
+[video.webm](https://github.com/user-attachments/assets/75d7cb33-4aff-4d64-a1f9-6c2c7060afc6)
 
 ## 🛠️ Tech Stack
 
