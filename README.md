@@ -1,6 +1,8 @@
 # Custom Clerk Authentication Portfolio Demo
 
-A modern Next.js 15 portfolio demo showcasing a custom authentication experience using Clerk, built with best practices and a beautiful UI.
+A modern Next.js 15 custom authentication experience using Clerk, built with best practices and a beautiful UI.
+
+> **Note:** All logo and testimonial images in this project were generated using [leonardo.ai](https://leonardo.ai/).
 
 ## 🚀 Features
 
