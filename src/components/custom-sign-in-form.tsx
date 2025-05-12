@@ -20,6 +20,9 @@ import { Separator } from './ui/separator';
 import { Checkbox } from './ui/checkbox';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Skeleton } from '@/components/ui/skeleton';
+import * as React from 'react';
+import { Loader2 } from 'lucide-react';
 
 const signInSchema = z.object({
   email: z.string().email(),
@@ -27,6 +30,35 @@ const signInSchema = z.object({
 });
 
 type SignInFormValues = z.infer<typeof signInSchema>;
+
+function CustomSignInFormSkeleton() {
+  return (
+    <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:max-w-[50%] lg:px-8">
+      <div className="space-y-6 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="mb-10">
+          <Skeleton className="h-16 w-16 rounded-sm" />
+        </div>
+        <Skeleton className="mb-2 h-8 w-3/4" />
+        <Skeleton className="h-5 w-1/2" />
+        <div className="mt-8 space-y-4">
+          <Skeleton className="h-11 w-full" />
+          <div className="flex items-center gap-2">
+            <Skeleton className="h-0.5 w-full" />
+            <Skeleton className="h-4 w-8" />
+            <Skeleton className="h-0.5 w-full" />
+          </div>
+          <Skeleton className="h-11 w-full" />
+          <Skeleton className="h-11 w-full" />
+          <div className="flex items-center justify-between">
+            <Skeleton className="h-5 w-24" />
+            <Skeleton className="h-5 w-20" />
+          </div>
+          <Skeleton className="h-11 w-full" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function CustomSignInForm() {
   const { signIn, isLoaded } = useSignIn();
@@ -45,7 +77,10 @@ export default function CustomSignInForm() {
 
   const onSubmit = async (data: SignInFormValues) => {
     if (!signIn) return;
+
     try {
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+
       const res = await signIn.create({
         identifier: data.email,
         password: data.password,
@@ -86,7 +121,7 @@ export default function CustomSignInForm() {
     }
   };
 
-  if (!isLoaded) return null;
+  if (!isLoaded) return <CustomSignInFormSkeleton />;
 
   return (
     <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:max-w-[50%] lg:px-8">
@@ -99,23 +134,6 @@ export default function CustomSignInForm() {
             height={64}
             className="rounded-sm shadow-sm"
           />
-          {/* <svg
-            className="h-10 w-10"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z"
-              fill="currentColor"
-            />
-            <path
-              d="M20 30C25.5228 30 30 25.5228 30 20C30 14.4772 25.5228 10 20 10V30Z"
-              fill="currentColor"
-            />
-          </svg> */}
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-gray-900">
           Sign in to your account
@@ -221,6 +239,9 @@ export default function CustomSignInForm() {
                 className="h-11 w-full bg-gray-900 hover:bg-gray-800"
                 disabled={form.formState.isSubmitting}
               >
+                {form.formState.isSubmitting && (
+                  <Loader2 className="animate-spin" />
+                )}
                 Log in
               </Button>
             </form>
